@@ -3,15 +3,19 @@
 //  Newer: querySelector, querySelectorAll
 //  Select the following single elements from the div.card
 
+const caseyNav = document.getElementById('mainNav');
+const aTag = document.getElementsByTagName('a');
+const menuItem = document.getElementsByClassName('menu-item');
+
 // A- finding across the entire DOM
-const header = null
-const logoTitle = null
-const firstCard = null
+const header = document.querySelector('header');
+const logoTitle = document.querySelector('#logoTitle');
+const firstCard = document.querySelector('.card:nth-of-type(1)');
 // B- finding within one particular element
-const imageFirstCard = null
-const titleFirstCard = null
-const subtitleFirstCard = null
-const textFirstCard = null
+const imageFirstCard = firstCard.querySelector('img');
+const titleFirstCard = firstCard.querySelector('h2');
+const subtitleFirstCard = firstCard.querySelector('h3');
+const textFirstCard = firstCard.querySelector('.card-text');
 // C- traversing with dot notation
 const link1FirstCard = null
 const link2FirstCard = null
