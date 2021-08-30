@@ -24,34 +24,46 @@ const link2FirstCard = link1FirstCard.nextElementSibling;
 // 👉 2- Finding collections of elements in the DOM
 // A- Find all the anchor tags inside the nav element
 const links = document.querySelectorAll('nav a');
-links.forEach(link => console.log(link.textContent));
 // B- Loop over the links and console.log their text content
+links.forEach(link => console.log(link.textContent));
 // C- Turn the collection of links into a real array
 const linksArray = Array.from(links);
-const foundLink = linksArray.find(link => link.textContent === 'Home');
 // for (let i = 0; i < links.length; i++) {
 //     links[i]
 // }
 // D- Use .filter to find the anchor tag with the textContent of "Home"
-console.log('noooooo!!!')
+const foundLink = linksArray.find(link => link.textContent === 'Home');
 
 // 👉 3- Changing an element's text content
 //  A- Change the cat-related content into dog-related content
+logoTitle.textContent = 'Lambda Dog';
+titleFirstCard.textContent = 'Dog or Doge';
 //  B- Have the students research online the difference between textContent and innerText
-
 
 // 👉 4- Changing any property
 //  A- Using dot notation to change a few attributes
+logoTitle.className = 'logo heading banana';
 //  B- Using .setAttribute to change a few attributes
+link1FirstCard.setAttribute('href', 'https://www.doggoipsum.com/');
 
 
 // 👉 5- Changing the styling of an element
 //  A- By changing the class names on the element with the classList API
+header.classList.add('sky');
+header.classList.remove('sky');
+// setInterval(() => header.classList.toggle('sky'), 1000);
 //  B- By manipulating inline styles on the element
 
+header.style.fontSize = '2em';
 
 // 👉 6- Creating new elements from scratch and appending them
 // Create a new link inside the nav for "Blog"
+const blogLink = document.createElement('a'); //<a></a>
+blogLink.textContent = 'Blog'; //<a>Blog</a>
+blogLink.href = '#'; // <a href="#">Blog</a>
+document.querySelector('nav').appendChild(blogLink);
+
+blogLink.classList.add('menu-item');
 
 
 // 👉 7- Making a copy of the card and appending it to the card group
