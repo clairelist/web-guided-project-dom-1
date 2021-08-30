@@ -24,6 +24,7 @@ const link2FirstCard = link1FirstCard.nextElementSibling;
 // 👉 2- Finding collections of elements in the DOM
 // A- Find all the anchor tags inside the nav element
 const links = document.querySelectorAll('nav a');
+
 // B- Loop over the links and console.log their text content
 links.forEach(link => console.log(link.textContent));
 // C- Turn the collection of links into a real array
@@ -65,13 +66,55 @@ document.querySelector('nav').appendChild(blogLink);
 
 blogLink.classList.add('menu-item');
 
-
 // 👉 7- Making a copy of the card and appending it to the card group
 // DOM nodes can only exist in one spot in the DOM
 // We cannot append the same copy multiple times
 
+const secondCard = firstCard.cloneNode(true);
+document.querySelector('.card-group').appendChild(secondCard);
 
 // 👉 8- Removing an existing element and putting it back [STRETCH if time allows]
+header.remove();
+document.body.prepend(header);
+
+// JavaScript Object Notation
+
+const data = {
+    "contact": {
+        "contact-heading": "Contact",
+        "address": "123 Way 456 Street Somewhere, USA",
+        "phone": "1 (888) 888-8888",
+        "email": "sales@greatidea.io",
+    }
+}
+
+const friends = [
+    {
+        name: "Lorem",
+        age: 1423
+    },
+    {
+        name: "Ipsum"
+    }
+]
+
+
+const contactHeading = document.querySelector('.contact-heading');
+const address = document.querySelector('.address');
+const phone = document.querySelector('.phone');
+const email = document.querySelector('.email');
+
+// two ways to access values in an object
+// dot nation: document.querySelector
+// bracket notation: obj[key]
+contactHeading.textContent = data["contact"]["contact-heading"];
+address.textContent = data["contact"]["address"];
+phone.textContent = data["contact"]["phone"];
+email.textContent = data["contact"]["email"];
+
+
+
+
 
 
 // 👉 9- Show to students the insertAdjacentHTML method [STRETCH if time allows]
